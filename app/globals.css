@@ -1,27 +1,431 @@
+/* @import url("https://fonts.googleapis.com/css2?family=Manrope:wght@200;300;400;500;600;700;800&display=swap"); */
+@import url("https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap");
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
 :root {
-  --foreground-rgb: 0, 0, 0;
-  --background-start-rgb: 214, 219, 220;
-  --background-end-rgb: 255, 255, 255;
+  --global-color-primary: #6ec1e4;
+  --global-color-secondary: #54595f;
+  --global-color-text: #7a7a7a;
+  --global-color-accent: #61ce70;
+  --global-color-red: #ff3f33;
+  --global-color-purple: #9b51e0;
+  --global-color-light-green-cyan: #7bdcb5;
+  --global-color-vivid-green-cyan: #00d084;
+  --preset--gradient--vivid-cyan-blue-to-vivid-purple: linear-gradient(
+    135deg,
+    rgba(6, 147, 227, 1) 0%,
+    #9b51e0 100%
+  );
+  --preset--gradient--light-green-cyan-to-vivid-green-cyan: linear-gradient(
+    135deg,
+    #7adcb4 0%,
+    #00d082 100%
+  );
+  --preset--gradient--luminous-vivid-amber-to-luminous-vivid-orange: linear-gradient(
+    135deg,
+    rgba(252, 185, 0, 1) 0%,
+    rgba(255, 105, 0, 1) 100%
+  );
+  --preset--gradient--luminous-vivid-orange-to-vivid-red: linear-gradient(
+    135deg,
+    rgba(255, 105, 0, 1) 0%,
+    #cf2e2e 100%
+  );
+  --preset--gradient--very-light-gray-to-cyan-bluish-gray: linear-gradient(
+    135deg,
+    #eee 0%,
+    #a9b8c3 100%
+  );
+  --preset--gradient--cool-to-warm-spectrum: linear-gradient(
+    135deg,
+    #4aeadc 0%,
+    #9778d1 20%,
+    #cf2aba 40%,
+    #ee2c82 60%,
+    #fb6962 80%,
+    #fef84c 100%
+  );
+  --preset--gradient--blush-light-purple: linear-gradient(
+    135deg,
+    #ffceec 0%,
+    #9896f0 100%
+  );
+  --preset--gradient--blush-bordeaux: linear-gradient(
+    135deg,
+    #fecda5 0%,
+    #fe2d2d 50%,
+    #6b003e 100%
+  );
+  --preset--gradient--luminous-dusk: linear-gradient(
+    135deg,
+    #ffcb70 0%,
+    #c751c0 50%,
+    #4158d0 100%
+  );
+  --preset--gradient--pale-ocean: linear-gradient(
+    135deg,
+    #fff5cb 0%,
+    #b6e3d4 50%,
+    #33a7b5 100%
+  );
+  --preset--gradient--electric-grass: linear-gradient(
+    135deg,
+    #caf880 0%,
+    #71ce7e 100%
+  );
+  --preset--gradient--midnight: linear-gradient(
+    135deg,
+    #020381 0%,
+    #2874fc 100%
+  );
+}
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Plus Jakarta Sans", sans-serif;
+}
+body, p {
+  font-family: 'Plus Jakarta Sans',sans-serif;
+  font-weight: 500;
+  text-transform: none;
+  font-size: 1em;
+  line-height: 1.75em;
+  color: #6b6b6b;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --foreground-rgb: 255, 255, 255;
-    --background-start-rgb: 0, 0, 0;
-    --background-end-rgb: 0, 0, 0;
-  }
+/* START: General styles */
+h1 {
+  font-family: "Plus Jakarta Sans", sans-serif;
+  font-weight: 700;
+  text-transform: capitalize;
+  font-size: 3.75em;
+  line-height: 1.3em;
+  color: #191d27;
 }
 
-body {
-  color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
+h2 {
+  font-family: "Plus Jakarta Sans", sans-serif;
+  font-weight: 600;
+  text-transform: capitalize;
+  font-size: 2.5em;
+  line-height: 1.4em;
+  color: #191d27;
 }
+
+h3 {
+  font-family: "Plus Jakarta Sans", sans-serif;
+  font-weight: 600;
+  text-transform: capitalize;
+  font-size: 1.875em;
+  line-height: 1.3em;
+  color: #191d27;
+}
+
+h4 {
+  font-family: "Plus Jakarta Sans", sans-serif;
+  font-weight: 600;
+  text-transform: capitalize;
+  font-size: 1.5em;
+  line-height: 1.5em;
+  color: #191d27;
+}
+
+h5 {
+  font-family: "Plus Jakarta Sans", sans-serif;
+  font-weight: 600;
+  text-transform: capitalize;
+  font-size: 1.25em;
+  line-height: 1.5em;
+  color: #191d27;
+}
+
+h6 {
+  font-family: "Plus Jakarta Sans", sans-serif;
+  font-weight: 600;
+  text-transform: capitalize;
+  font-size: 1.125em;
+  line-height: 1.5em;
+  color: #191d27;
+}
+
+body,
+p {
+  font-family: "Plus Jakarta Sans", sans-serif;
+  font-weight: 500;
+  text-transform: none;
+  font-size: 1em;
+  line-height: 1.75em;
+  color: #6b6b6b;
+}
+.text-red{
+  color: var(--global-color-red);
+}
+.max-width {
+  @apply max-w-[1440px] mx-auto;
+}
+
+.padding-x {
+  @apply sm:px-16 px-6;
+}
+
+.padding-y {
+  @apply py-4;
+}
+
+.flex-center {
+  @apply flex items-center justify-center;
+}
+
+.flex-between {
+  @apply flex justify-between items-center;
+}
+
+.custom-btn {
+  @apply flex flex-row relative justify-center items-center py-3 px-6 outline-none;
+}
+/* END: General styles */
+
+/* START: Hero styles */
+.hero {
+  @apply flex xl:flex-row flex-row gap-5 relative z-0 max-w-[1440px] mx-auto;
+  background-color: transparent;
+  background-image: linear-gradient(90deg, #daf6ff 0%, #eddeff 100%);
+  transition: background 0.3s, border 0.3s, border-radius 0.3s, box-shadow 0.3s;
+  position: relative;
+}
+.hero__background-overlay {
+  background-image: url(https://apptek.radiantthemes.com/wp-content/uploads/2022/11/main-bg.webp);
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  opacity: 1;
+  transition: background 0.3s, border-radius 0.3s, opacity 0.3s;
+  height: 100%;
+  width: 100%;
+  top: 0;
+  left: 0;
+  position: absolute;
+}
+.hero__span {
+  @apply xl:text-[24px] sm:text-[18px] text-[50px];
+  color: var(--global-color-red);
+}
+.hero__title {
+  @apply 2xl:text-[72px] sm:text-[36px] text-[50px] font-extrabold;
+}
+
+.hero__subtitle {
+  @apply text-[18px] text-black-100 font-light mt-5;
+}
+
+.hero__image-container {
+  @apply xl:flex-[1.5] flex justify-end items-end xl:h-screen;
+}
+
+.hero__image {
+  @apply relative xl:w-full w-[90%] xl:h-full h-[590px] z-0;
+}
+
+.hero__image-overlay {
+  @apply absolute xl:-top-24 xl:-right-1/2 -right-1/4 bg-hero-bg bg-repeat-round -z-10 w-full xl:h-screen h-[590px] overflow-hidden;
+}
+/* END: Hero styles */
+
+/* START: Home styles */
+
+.home__text-container {
+  @apply flex flex-col items-start justify-start gap-y-2.5 text-black-100;
+}
+
+.home__filters {
+  @apply mt-12 w-full flex-between items-center flex-wrap gap-5;
+}
+
+.home__filter-container {
+  @apply flex justify-start flex-wrap items-center gap-2;
+}
+
+.home__cars-wrapper {
+  @apply grid 2xl:grid-cols-4 xl:grid-cols-3 md:grid-cols-3 grid-cols-1 w-full gap-8 pt-14;
+}
+
+.home__error-container {
+  @apply mt-16 flex justify-center items-center flex-col gap-2;
+}
+/* END: Home styles */
+
+/* START: Car Card styles */
+.car-card {
+  @apply flex flex-col p-6 justify-center items-start text-black-100 bg-primary-blue-100 hover:bg-white hover:shadow-md rounded-3xl;
+}
+
+.car-card__content {
+  @apply w-full flex justify-between items-start gap-2;
+}
+
+.car-card__content-title {
+  @apply text-[22px] leading-[26px] font-bold capitalize;
+}
+
+.car-card__price {
+  @apply flex mt-6 text-[32px] leading-[38px] font-extrabold;
+}
+
+.car-card__price-dollar {
+  @apply self-start text-[14px] leading-[17px] font-semibold;
+}
+
+.car-card__price-day {
+  @apply self-end text-[14px] leading-[17px] font-medium;
+}
+
+.car-card__image {
+  @apply relative w-full h-40 my-3 object-contain;
+}
+
+.car-card__icon-container {
+  @apply flex group-hover:invisible w-full justify-between text-grey;
+}
+
+.car-card__icon {
+  @apply flex flex-col justify-center items-center gap-2;
+}
+
+.car-card__icon-text {
+  @apply text-[14px] leading-[17px];
+}
+
+.car-card__btn-container {
+  @apply hidden group-hover:flex absolute bottom-0 w-full z-10;
+}
+/* END: Car Card styles */
+
+/* START: Car Details styles */
+.car-details__dialog-panel {
+  @apply relative w-full max-w-lg max-h-[90vh] overflow-y-auto transform rounded-2xl bg-white p-6 text-left shadow-xl transition-all flex flex-col gap-5;
+}
+
+.car-details__close-btn {
+  @apply absolute top-2 right-2 z-10 w-fit p-2 bg-primary-blue-100 rounded-full;
+}
+
+.car-details__main-image {
+  @apply relative w-full h-40 bg-pattern bg-cover bg-center rounded-lg;
+}
+/* END: Car Details styles */
+
+/* START: Custom Filter styles */
+.custom-filter__btn {
+  @apply relative w-full min-w-[127px] flex justify-between items-center cursor-default rounded-lg bg-white py-2 px-3 text-left shadow-md sm:text-sm border;
+}
+
+.custom-filter__options {
+  @apply absolute mt-1 max-h-60 w-full overflow-auto rounded-md bg-white py-1 text-base shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none sm:text-sm;
+}
+/* END: Custom Filter styles */
+
+/* START: Footer styles */
+.footer {
+  @apply flex flex-col text-black-100  mt-5 border-t border-gray-100;
+}
+
+.footer__links-container {
+  @apply flex max-md:flex-col flex-wrap justify-between gap-5 sm:px-16 px-6 py-10;
+}
+
+.footer__rights {
+  @apply flex flex-col justify-start items-start gap-6;
+}
+
+.footer__links {
+  @apply flex-1 w-full flex md:justify-end flex-wrap max-md:mt-10 gap-20;
+}
+
+.footer__link {
+  @apply flex flex-col gap-6 text-base min-w-[170px];
+}
+
+.footer__copyrights {
+  @apply flex justify-between items-center flex-wrap mt-10 border-t border-gray-100 sm:px-16 px-6 py-10;
+}
+
+.footer__copyrights-link {
+  @apply flex-1 flex sm:justify-end justify-center max-sm:mt-4 gap-10;
+}
+/* END: Footer styles */
+
+/* START: searchbar styles */
+.searchbar {
+  @apply flex items-center justify-start max-sm:flex-col w-full relative max-sm:gap-4 max-w-2xl;
+}
+
+.searchbar__item {
+  @apply flex-1 max-sm:w-full flex justify-start items-center relative;
+}
+
+.searchbar__input {
+  @apply w-full h-[48px] pl-12 p-4 bg-light-white rounded-r-full max-sm:rounded-full outline-none cursor-pointer text-sm;
+}
+/* END: searchbar styles */
+
+/* START: search manufacturer styles */
+.search-manufacturer {
+  @apply flex-1 max-sm:w-full flex justify-start items-center;
+}
+
+.search-manufacturer__input {
+  @apply w-full h-[48px] pl-12 p-4 rounded-l-full max-sm:rounded-full bg-light-white outline-none cursor-pointer text-sm;
+}
+
+.search-manufacturer__options {
+  @apply absolute mt-1 max-h-60 w-full overflow-auto rounded-md bg-white py-1 text-base shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none sm:text-sm;
+}
+
+.search-manufacturer__option {
+  @apply cursor-default select-none py-2 pl-10 pr-4;
+}
+/* END: search manufacturer styles */
+.shape__bottom {
+  z-index: 2;
+  pointer-events: none;
+  -webkit-transform: rotate(180deg);
+  -ms-transform: rotate(180deg);
+  transform: rotate(180deg);
+  overflow: hidden;
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  line-height: 0;
+  direction: ltr;
+}
+.shape__bottom svg {
+  height: 70px;
+  width: calc(100% + 1.3px);
+  transform: translateX(-50%) rotateY(180deg);
+  z-index: -1;
+  display: block;
+  position: relative;
+  position: relative;
+  left: 50%;
+}
+.shape__bottom .shape__fill {
+  fill: #fff;
+  -webkit-transform-origin: center;
+  -ms-transform-origin: center;
+  transform-origin: center;
+  -webkit-transform: rotateY(0deg);
+  transform: rotateY(0deg);
+}
+/* Home Service Category */
+.home__service_category {
+  background-color: #fffaf3;
+}
+.sc__container img{
+  min-height: 126px;
+}
+/* Home Service Category */
