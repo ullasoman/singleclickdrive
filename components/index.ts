@@ -1,4 +1,5 @@
 import CarCard from "./CarCard";
+import CarCardNew from "./CarCardNew";
 import CustomButton from "./CustomButton";
 import CustomFilter from "./CustomFilter";
 import Footer from "./Footer";
@@ -10,6 +11,7 @@ import ServiceCategory from "./ServiceCategory";
 
 export {
   Hero,
+  CarCardNew,
   CarCard,
   CustomButton,
   CustomFilter,

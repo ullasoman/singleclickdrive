@@ -1,5 +1,26 @@
 import { MouseEventHandler } from "react";
 
+export interface CarList {
+  id: number;
+  image: string;
+  title: string;
+  rent_price:string;
+  //category_detail: CategoryDetail[];
+  per_day: string;
+  per_month: string;
+  category: string;
+  door: number;
+  passenger: number;
+  luggage: number;
+  name: string;
+  slug: string;
+  logo: string;
+  minimum_rental_day:string;
+  deposit:string;
+  is_insurance:boolean;
+  service_status:string;
+}
+
 export interface CarProps {
   city_mpg: number;
   class: string;

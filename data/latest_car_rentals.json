@@ -1,0 +1,104 @@
+{
+    "data": [
+        { 
+            "id": 1,
+            "image":"/uploads/company/al-emad-jlt/images/cars/1.webp",
+            "title": "Peugeot 3008 2022",
+            "rent_price":{
+                "per_day":"170",
+                "per_month":"3000"
+            },
+            "tags":{
+                "category":"SUV",
+                "door":4,
+                "passenger":5,
+                "luggage":2
+            },
+            "company":{
+                "name":"Al Emad Jlt",
+                "slug":"al-emad-jlt",
+                "logo":"/uploads/company/al-emad-jlt/images/logo/al-emad-jlt-rent-car-big-logo.webp",
+                "minimum_rental_day":2,
+                "deposit":"1000",
+                "is_insurance":true,
+                "service_status":"open"
+            },
+            "user_favourite":false
+        },
+        { 
+            "id": 2, 
+            "image":"/uploads/company/selya-rent-a-car/images/cars/2.webp",
+            "title": "Rent Porsche 911 Targa 4 GTS Spyder 2023 in Dubai",
+            "rent_price":{
+                "per_day":"2500",
+                "per_month":null
+            },
+            "tags":{
+                "category":"Hybrid",
+                "door":2,
+                "passenger":2,
+                "luggage":1
+            },
+            "company":{
+                "name":"Selya Rent a Car",
+                "slug":"selya-rent-a-car",
+                "logo":"/uploads/company/selya-rent-a-car/images/logo/selya-rental-big-logo.webp",
+                "minimum_rental_day":2,
+                "deposit":"5000",
+                "is_insurance":true,
+                "service_status":"open"
+            },
+            "user_favourite":false
+        },
+        { 
+            "id": 3, 
+            "image":"/uploads/company/luxury-supercar-rentals/images/cars/3.webp",
+            "title": "McLaren Artura 2023",
+            "rent_price":{
+                "per_day":"5000",
+                "per_month":null
+            },
+            "tags":{
+                "category":"Sports",
+                "door":2,
+                "passenger":2,
+                "luggage":2
+            },
+            "company":{
+                "name":"Luxury Supercar Rentals",
+                "slug":"luxury-supercar-rentals",
+                "logo":"/uploads/company/luxury-supercar-rentals/images/logo/luxurysupercar-rental.webp",
+                "minimum_rental_day":1,
+                "deposit":"5000",
+                "is_insurance":true,
+                "service_status":"open"
+            },
+            "user_favourite":false
+        },
+        { 
+            "id": 4,
+            "image":"/uploads/company/superior-car-rental/images/cars/4.webp", 
+            "title": "Rent Lamborghini Huracan Evo Spyder 2021 in Dubai",
+            "rent_price":{
+                "per_day":"3199",
+                "per_month":"56,700"
+            },
+            "tags":{
+                "category":"Super Car",
+                "door":2,
+                "passenger":2,
+                "luggage":1
+            },
+            "company":{
+                "name":"Superior Car Rental",
+                "slug":"superior-car-rental",
+                "logo":"/uploads/company/superior-car-rental/images/logo/superior-car-rental.webp",
+                "minimum_rental_day":1,
+                "deposit":"5000",
+                "is_insurance":true,
+                "service_status":"open"
+            },
+            "user_favourite":false
+        }
+    ]
+  }

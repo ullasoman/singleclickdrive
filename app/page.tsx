@@ -1,7 +1,7 @@
-import { fetchCars } from "@utils";
+import { fetchCars,fetchRentalCars} from "@utils";
 import { HomeProps } from "@types";
 import { fuels, yearsOfProduction } from "@constants";
-import { CarCard, ShowMore, SearchBar, CustomFilter, Hero, ServiceCategory } from "@components";
+import { CarCard, ShowMore, SearchBar, CustomFilter, Hero, ServiceCategory, CarCardNew } from "@components";
 import Brands from "@components/Brands";
 
 export default async function Home({ searchParams }: HomeProps) {
@@ -13,7 +13,10 @@ export default async function Home({ searchParams }: HomeProps) {
     model: searchParams.model || "",
   });
 
+  const latestCars =  await fetchRentalCars();
+
   const isDataEmpty = !Array.isArray(allCars) || allCars.length < 1 || !allCars;
+  const isDataEmpti = !Array.isArray(latestCars) || latestCars.length < 1 || !latestCars;
 
   return (
     <main className='overflow-hidden'>
@@ -34,27 +37,23 @@ export default async function Home({ searchParams }: HomeProps) {
             <CustomFilter title='year' options={yearsOfProduction} />
           </div>
         </div>
-
-        {!isDataEmpty ? (
-          <section>
+      </div>
+      {!isDataEmpti ? (
+        <section className="bg__light">
+          <div className='mt-12 padding-x padding-y max-width' id='discover'>
             <div className='home__cars-wrapper'>
-              {allCars?.map((car) => (
-                <CarCard car={car} />
+              {latestCars?.map((data) => (
+                <CarCardNew car={data} />
               ))}
             </div>
-
-            <ShowMore
-              pageNumber={(searchParams.limit || 10) / 10}
-              isNext={(searchParams.limit || 10) > allCars.length}
-            />
+            </div>
           </section>
-        ) : (
-          <div className='home__error-container'>
-            <h2 className='text-black text-xl font-bold'>Oops, no results</h2>
-            <p>{allCars?.message}</p>
-          </div>
-        )}
-      </div>
+          ) : (
+            <div className='home__error-container'>
+              <h2 className='text-black text-xl font-bold'>Oops, no results</h2>
+              <p>{allCars?.message}</p>
+            </div>
+          )}
     </main>
   );
 }
